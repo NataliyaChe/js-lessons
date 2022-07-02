@@ -106,3 +106,4 @@ console.log(out19);
 // Task 20
 
 let out20 = document.querySelector('.out-20');
+out20.textContent = '&#x27;&#x3C;h2&#x3E;Hi&#x3C;/h2&#x3E;&#x27;';
