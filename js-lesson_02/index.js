@@ -101,7 +101,8 @@ console.log(out18);
 
 let out19 = document.querySelector('.out-19');
 console.log(out19);
-
+out19 = document.querySelector('.out-19-test');
+console.log(out19);
 
 // Task 20
 
