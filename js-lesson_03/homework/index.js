@@ -52,40 +52,47 @@ document.querySelector('.out-7').textContent = e4 * f4;
 // Task 8.
 // По нажатию на кнопку .b-8 выполняется функция, которая выводит в div.out-8 то, что пользователь ввел в input.i-8.
 
-function t8() {
-    // value всегда получаем внутри функции
-    // let data = document.querySelector('.i-8').value; // получили значение
-    // тут выводим
-}
+let i08 = document.querySelector('.i-8');
+const b08 = document.querySelector('.b-8');
+let out08 = document.querySelector('.out-8');
 
-document.querySelector('.b-8').onclick = t8;
+b08.onclick = () => {
+    out08.innerHTML = i08.value;
+}
 
 // Task 9.
 // По нажатию на кнопку .b-9 выполняется функция t9, которая выводит в div.out-9 то, что пользователь ввел в input.i-9. Добавьте очистку input после нажатия кнопки.
 
-function t9() {
+let i09 = document.querySelector('.i-9');
+const b09 = document.querySelector('.b-9');
+let out09 = document.querySelector('.out-9');
 
+b09.onclick = () => {
+    out09.innerHTML = i09.value;
+    i09.value = "";
 }
-
-document.querySelector('.b-9').onclick = t9;
 
 // Task 10.
 // По нажатию на кнопку .b-10 выполняется функция t10, которая выводит в div.out-10 то, что пользователь ввел в input.i-10 умноженное на 20.
 
-function t10() {
+let i10 = document.querySelector('.i-10');
+const b10 = document.querySelector('.b-10');
+let out10 = document.querySelector('.out-10');
 
+b10.onclick = () => {
+    out10.innerHTML = i10.value * 20;
 }
-
-document.querySelector('.b-10').onclick = t10;
 
 // Task 11.
 // По нажатию на кнопку .b-11 выполняется функция t11, которая выводит на страницу в .out-11 число, которое ввел пользователь в i-11 и к нему добавленное число 55. В этой задаче мы не приводим к числу полученное из input.
 
-function t11() {
+let i11 = document.querySelector('.i-11');
+const b11 = document.querySelector('.b-11');
+let out11 = document.querySelector('.out-11');
 
+b11.onclick = () => {
+    out11.innerHTML = i11.value + 55;
 }
-
-document.querySelector('.b-11').onclick = t11;
 
 // Task 12.
 // По нажатию на кнопку выполняется функция t12. Функция должна получить данные из input i.12-1 и i.12-2 (пользователь вводин в них фамилию и имя). После чего вывести в .out-12  строку 'Hello имя фамилия', где имя - имя пользователя и фамилия - введенная фамилия. Обращаю ваше внимание - с этого момента мы работаем строго по заданию. Hello - с большой буквы. Между Hello имя один пробел (вы же включили отображение пробелов?). Вы не добавляете "от себя" - запятые, любые другие слова и символы. Аналогичные правила действуют и дальше по курсу.
