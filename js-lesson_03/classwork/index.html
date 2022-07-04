@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="number" class="inp">
+    <button class="btn">Submit</button>
+    <div class="out"></div>
+
+    <script>
+        let inp = document.querySelector('.inp');
+        let btn = document.querySelector('.btn');
+        let out = document.querySelector('.out');
+
+        const d = new Date();
+        let year = d.getFullYear();
+        btn.onclick = () => {
+            let userAge = year - inp.value;
+            console.log(year - +inp.value);
+            if (year - +inp.value >= 18) {
+                out.innerHTML = 'true';
+            } else {
+                out.innerHTML = 'false';
+            }
+        }
+    </script>
+</body>
+</html>

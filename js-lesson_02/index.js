@@ -76,7 +76,7 @@ out14.innerHTML = `${z1 * z2}`;
 let y1 = 6;
 let y2 = 3;
 let out15 = document.querySelector('.out-15');
-out15.innerHTML = `${y1 / y2}`;
+out15.innerHTML = y1 / y2;
 
 // Task 16
 
@@ -87,7 +87,7 @@ out16.innerHTML = `${x1 + x2}`;
 
 // Task 17
 
-let out17 = document.querySelector('.out-17');
+const out17 = document.querySelector('.out-17');
 console.log(out17);
 
 // Task 18
@@ -108,3 +108,17 @@ console.log(out19);
 
 let out20 = document.querySelector('.out-20');
 out20.textContent = '&#x27;&#x3C;h2&#x3E;Hi&#x3C;/h2&#x3E;&#x27;';
+
+// Other
+
+let task01 = document.querySelector('.task-01');
+task01.innerHTML = 0.1 + 0.2;
+
+let x = 1;
+let y = "2";
+
+let task02 = document.querySelector('.task-02');
+task02.innerHTML = x + Number(y);
+
+
+

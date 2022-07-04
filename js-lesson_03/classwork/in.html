@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="login" placeholder="login">
+    <input type="password" id="pass" placeholder="password">
+    <button class="btn">Sign in</button>
+    <div class="out"></div>
+
+    <!-- <script>
+        let userLogin = "admin";
+        let userPass = "123";
+        let out = document.querySelector('.out');
+        let btn = document.querySelector('.btn');
+        let login = document.querySelector('#login');
+        let pass = document.querySelector('#pass');
+        
+        btn.onclick = () => {
+            
+            if (login.value == userLogin && pass.value == userPass) {
+                out.innerHTML = "done";
+            } else {
+                login.style.border = "1px solid red"
+                pass.style.border = "1px solid red"
+            }
+        }
+    </script> -->
+
+    <p>Введите число от 1 до 100:</p>
+    <input type="number" class="input" min="1" max="100">
+    <button class="btn">Submit</button>
+    <div class="out">
+
+    </div>
+
+    <script>
+        let inp = document.querySelector('.input');
+        let btn = document.querySelector('.btn');
+        let out = document.querySelector('.out');
+
+        let random = Math.floor(Math.random() * 100);
+        btn.onclick = () => {
+            let number = +inp.value;
+            if (number = random) {
+            out.innerHTML = "Win!"
+            } else if (number < random) {out.innerHTML = "Хoлодно"}
+            
+        }
+        console.log(random);     
+    </script>
+
+    <input class="inp" type="number" placeholder="input">
+    <select class="sel">
+        <option value="">+</option>
+        <option value="">-</option>
+        <option value="">*</option>
+    </select>
+    <input class="inp2" type="number">
+    <button class="btn">Calculate</button>
+    <div class="out"></div>
+
+    <!-- <script>
+        let inp = document.querySelector('.inp');
+        let inp2 = document.querySelector('.inp2');
+        let btn = document.querySelector('.btn');
+        let out = document.querySelector('.out');
+
+        btn.onclick = () => {
+            switch (sel.value) {
+                case '+':
+                    out.innerHTML = `${inp.value} + ${inp2.value} = ${+inp.value + +inp2.value}`;
+                    break;
+
+                case '-':
+                    out.innerHTML = `${inp.value} - ${inp2.value} = ${+inp.value - +inp2.value}`;
+                    break;
+
+                case '*':
+                    out.innerHTML = `${inp.value} * ${inp2.value} = ${+inp.value * +inp2.value}`;
+                    break;
+
+                default:
+                    out.innerHTML = "Try again"
+                    break;
+            }
+
+        }
+    </script> -->
+</body>
+</html>
