@@ -68,11 +68,12 @@ let btn03 = document.querySelector('.btn03');
 let out03 = document.querySelector('.out03');
 let res = 0;
 
-btn02.onclick = () => {
+btn03.onclick = () => {
     while (num01 <= num02) {
         res += num01;
         num01++;
     }
-    out03.innerHTML = res;
+    console.log(res)
+    // out03.innerHTML = res;
 }
 // console.log('test');
