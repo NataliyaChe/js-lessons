@@ -62,5 +62,17 @@ btn02.onclick = () => {
     }
 }
 
+let num01 = document.querySelector('.num01');
+let num02 = document.querySelector('.num02');
+let btn03 = document.querySelector('.btn03');
+let out03 = document.querySelector('.out03');
+let res = 0;
 
-
+btn02.onclick = () => {
+    while (num01 <= num02) {
+        res += num01;
+        num01++;
+    }
+    out03.innerHTML = res;
+}
+// console.log('test');
