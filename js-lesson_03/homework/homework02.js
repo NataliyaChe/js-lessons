@@ -8,6 +8,7 @@ const age = document.querySelector('.age');
 const btn = document.querySelector('.btn');
 const out01 = document.querySelector('.out01');
 btn.onclick = () => {
+    console.log(age.value >= 0 && age.value <= 11);
     if (age.value >= 0 && age.value <= 11) {
         out01.innerHTML = "Вы - ребенок";
     } else if (age.value >= 12 && age.value <= 17) {
@@ -63,17 +64,22 @@ btn02.onclick = () => {
 }
 
 let num01 = document.querySelector('.num01');
+console.log('document', document);
+console.log('num01', num01);
 let num02 = document.querySelector('.num02');
 let btn03 = document.querySelector('.btn03');
 let out03 = document.querySelector('.out03');
 let res = 0;
 
 btn03.onclick = () => {
-    while (num01 <= num02) {
-        res += num01;
-        num01++;
+    console.log(typeof num01.value);
+    console.log(typeof num02.value);
+
+    let a = +num01.value;
+    while (a <= +num02.value) {
+        console.log('result', res);
+        res += a;
+        a++;
     }
-    console.log(res)
-    // out03.innerHTML = res;
+    out03.innerHTML = res;
 }
-// console.log('test');
