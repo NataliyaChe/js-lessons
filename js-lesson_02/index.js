@@ -116,9 +116,12 @@ task01.innerHTML = 0.1 + 0.2;
 
 let x = 1;
 let y = "2";
-
 let task02 = document.querySelector('.task-02');
 task02.innerHTML = x + Number(y);
 
-
-
+let inp = document.querySelector('.inp');
+let btn = document.querySelector('.btn');
+let task03 = document.querySelector('.task-03');
+btn.onclick = () => {
+    task03.innerHTML = inp.value * 1024 / 820
+}
