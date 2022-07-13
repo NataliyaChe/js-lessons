@@ -207,6 +207,66 @@ btn04.onclick = sale;
 
 // Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. При цьому також порахуй, скільки з них парних і непарних. Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем.
 
+// let out07 = document.querySelector('.out07');
+// function statistic() {
+//     let anynum = prompt('Введите любое число');
+//     let even = '';
+//     let odd = '';
+//     let plus = '';
+//     let minus = '';
+//     let zero = '';
+//     console.log('test');
+//     if (anynum < 0 && anynum % 2 === 0) {
+//         even += `${anynum} `;
+//         minus += `${anynum} `;
+//         console.log(even, minus);
+//     } else if (anynum < 0 && anynum % 2 !== 0) {
+//         odd += `${anynum} `;
+//         minus += `${anynum} `;
+//         console.log(odd, minus);
+//     } else if (anynum > 0 && anynum % 2 === 0) {
+//         even += `${anynum} `;
+//         plus += `${anynum} `;
+//         console.log(even, plus);
+//     } else if (anynum > 0 && anynum % 2 !== 0) {
+//         odd += `${anynum} `;
+//         plus += `${anynum} `;
+//         console.log(odd, plus);
+//     } else if (anynum = 0) {
+//         zero += `${anynum} `;
+//         console.log(zero);
+//     }
+//     return `Вы ввели такие числа: положительные ${plus}; отрицательные ${minus}; четные ${even}; нечетные ${odd}; ноли ${zero};`;
+// }
+// console.log(statistic());
 
+let out07 = document.querySelector('.out07');
+function statistic() {
+    let even = 0;
+    let odd = 0;
+    let plus = 0;
+    let minus = 0;
+    let zero = 0;
+    for (let i = 1; i <= 10; i++){
+        let anynum = +prompt('Введите любое число');
+        console.log(typeof anynum);
+        if (anynum === 0) {
+            zero++;
+            continue;
+        } 
+        if (anynum % 2 === 0) {
+            even++;
+        } else {
+            odd++;
+        } 
+        if (anynum > 0) {
+            plus++;
+        } else {
+            minus++;
+        } 
+    }
+    out07.innerHTML = `Ваша статистика: положительных ${plus}; отрицательных ${minus}; четных ${even}; нечетных ${odd}; нолей ${zero};`;
+}
+console.log(statistic());
 
 // Зацикли відображення днів тижня таким чином: «День тижня. Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.
