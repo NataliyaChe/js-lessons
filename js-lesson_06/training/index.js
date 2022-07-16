@@ -27,4 +27,13 @@ function isEmpty(obj) {
   }
   console.log(sum);
 
+  const obj = {
+    name: 'Nata',
+
+  }
   
+  obj.lastName = 'Cherkashina';
+  const a = 'age';
+  obj[a] = 35;
+  console.log(obj);
+ console.log(a in obj);
