@@ -37,40 +37,27 @@ let time = {
     setMinutes(number) {
         if (this.minutes + number < 60) {
             this.minutes += number;
-            } else {
-                this.minutes = (this.minutes + number) % 60;
-                if (this.hours + Math.floor(number / 60) < 24) {
-                    this.hours += Math.floor(number / 60);
-                } else {
-                    this.hours = (this.hours + Math.floor(number / 60)) - 24;
-                } 
-            } 
+        } else {
+            this.minutes = (this.minutes + number) % 60;
+            time.setHours(Math.floor(number / 60)); 
+        } 
     },
     setSeconds(number) {
         if (this.seconds + number < 60) {
             this.seconds += number;
-            } else {
-                this.seconds = (this.seconds + number) % 60;
-                if (this.minutes + Math.floor(number / 60) < 60) {
-                    this.minutes += Math.floor(number / 60);
-                } else {
-                    this.minutes = (this.minutes + Math.floor(number / 60)) - 60;
-                }
-                if (this.hours + Math.floor(number / 3600) < 24) {
-                    this.hours += Math.floor(number / 3600);
-                } else {
-                    this.hours = (this.hours + Math.floor(number / 3600)) - 24;
-                } 
-            } 
+        } else {
+            this.seconds = (this.seconds + number) % 60;
+            time.setMinutes(Math.floor(number / 60));
+        } 
     },
 }
 
 console.log('test');
 console.log(time.setHours(5));
 console.log(time.getTime());
-console.log(time.setMinutes(1545));
+console.log(time.setMinutes(152));
 console.log(time.getTime());
-console.log(time.setSeconds(1545));
+console.log(time.setSeconds(3600));
 console.log(time.getTime());
 
 
