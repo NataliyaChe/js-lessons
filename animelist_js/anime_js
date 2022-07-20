@@ -1,0 +1,20 @@
+const testArr = [
+    {
+        name: 'Naruto',
+        genre: 'shounen',
+        format: 'serial',
+        episodes: 700
+    },
+    {
+        name: 'Bleach',
+        genre: 'shounen',
+        format: 'serial',
+        episodes: 366
+    },
+    {
+        name: 'Princess Mononoke',
+        genre: 'fantasy',
+        format: 'film',
+        episodes: 1
+    }
+  ]
