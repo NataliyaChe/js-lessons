@@ -221,7 +221,11 @@ const anime = [
     },
   ]
 
-  for (let i = 0; i < anime.length; i++) {
+const genreList = [
+    'All', 'Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Shounen', 'Slice of Life', 'Sports', 
+]
+
+for (let i = 0; i < anime.length; i++) {
     const element = anime[i]
     const liItem = document.createElement('li');
     const content = `
@@ -240,17 +244,65 @@ const anime = [
 let mainTitle = document.createElement('h1');
 mainTitle.innerHTML = 'Anime List';
 wrapper.prepend(mainTitle);
-
+    
 let genreSelect = document.createElement('select');
-const genre = `
-    <option>Action</option>
-    <option>Comedy</option>
-    <option>Drama</option>
-    <option>Fantasy</option>
-    <option>Horror</option>
-    <option>Shounen</option>
-    <option>Slice of Life</option>
-    <option>Sports</option>  
-`
-genreSelect.innerHTML = genre;
 animeList.before(genreSelect);
+for (let i = 0; i < genreList.length; i++) {
+    const genre = genreList[i]
+    const genreOption = document.createElement('option');
+    genreOption.innerHTML = genre;
+    genreSelect.appendChild(genreOption);  
+}
+
+const btn = document.createElement('button');
+btn.innerText = 'Submit'
+genreSelect.after(btn);
+btn.onclick = () => {
+  console.log(genreSelect.value)
+  let animeListFilter = document.createElement('ul');
+  animeList.replaceWith(animeListFilter);
+  if (genreSelect.value === 'All') {
+    console.log("testing");
+    for (let i = 0; i < anime.length; i++) {
+        const elementAll = anime[i]
+        const liItemAll = document.createElement('li');
+        const contentAll = `
+            <h2>${elementAll.name} </h2>
+            <p>Genre: ${elementAll.genre} </p>
+            <p>Format: ${elementAll.format} </p>
+            <p>Episodes: ${elementAll.episodes} </p>
+            <p>Studious: ${elementAll.studious} </p>
+            <p>Rating: ${elementAll.rating} </p>
+            <p>Premiered: ${elementAll.releaseDate} </p>
+        `
+        liItemAll.innerHTML = contentAll;
+        animeListFilter.appendChild(liItemAll);
+    }
+  } else { 
+    let genreFilter = anime.filter(obj => obj.genre === genreSelect.value);
+    console.log(genreFilter); 
+    for (let i = 0; i < genreFilter.length; i++) {
+        const elementFilter = genreFilter[i]
+        const liItemFilter = document.createElement('li');
+        const contentFilter = `
+            <h2>${elementFilter.name} </h2>
+            <p>Genre: ${elementFilter.genre} </p>
+            <p>Format: ${elementFilter.format} </p>
+            <p>Episodes: ${elementFilter.episodes} </p>
+            <p>Studious: ${elementFilter.studious} </p>
+            <p>Rating: ${elementFilter.rating} </p>
+            <p>Premiered: ${elementFilter.releaseDate} </p>
+        `
+        liItemFilter.innerHTML = contentFilter;
+        animeListFilter.appendChild(liItemFilter);
+    }
+    // const genreArr = document.createElement('ul');
+    // genreArr.innerHTML = genreFilter;
+    // animeList.before(genreArr);
+  }
+}
+
+
+
+
+
