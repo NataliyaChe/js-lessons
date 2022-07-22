@@ -296,9 +296,6 @@ btn.onclick = () => {
         liItemFilter.innerHTML = contentFilter;
         animeListFilter.appendChild(liItemFilter);
     }
-    // const genreArr = document.createElement('ul');
-    // genreArr.innerHTML = genreFilter;
-    // animeList.before(genreArr);
   }
 }
 

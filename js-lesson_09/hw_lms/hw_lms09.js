@@ -1,3 +1,5 @@
+// Створити сторінку, що показує нумерований список пісень:
+
 let wrapper = document.querySelector('.wrapper');
 let list = document.createElement('ol');
 wrapper.appendChild(list);
