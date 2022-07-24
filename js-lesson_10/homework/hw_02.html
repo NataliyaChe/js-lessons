@@ -36,7 +36,27 @@
         <div data-speed="2" class="box">123</div>
     </div>
     <script>
-        // window.addEventListener('resize', function () {}) // > 1200 only desktop
+        // window.addEventListener('resize', function () {
+        //     console.log(window.innerWidth);
+        // })
+        // function isDesktop() {
+            
+        //     if (window.innerWidth > 1200) {
+        //         cont.addEventListener();
+        //         let cont = document.querySelector('.container');
+        //         cont.addEventListener("mousemove", function (e) {
+        //             this.querySelectorAll('.box').forEach((value) => {
+        //                 let speed = value.getAttribute('data-speed');
+        //                 console.log(speed);
+        //                 value.style.transform = `translate(${e.clientX * speed / 10}px, ${e.clientY * speed / 10}px)`;
+        //             })
+                
+        //         });
+        //     }
+        // }
+        window.addEventListener('resize', function () {
+            console.log(window.innerWidth);
+        }) // > 1200 only desktop
         let cont = document.querySelector('.container');
 
         cont.addEventListener("mousemove", function (e) {

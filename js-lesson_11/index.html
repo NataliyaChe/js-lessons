@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <input type="text" class="inp">
+    <button class="btn">Add</button>
+    <div class="out"></div> -->
+    <div id="root">
+        <!-- <section class="header">
+            <div class="header__container">
+                <h1 class="header__title"></h1>
+                <p class="header__text"></p>
+                <img src="" alt="" class="header__img">
+            </div>
+        </section> -->
+    </div>
+   
+    <script>
+        let root = document.getElementById('root');
+        let arr = [
+            {
+            title: 'Some title',
+            text: 'Some text',
+            img2: 'https://ecologyofrussia.ru/upload/iblock/1c6/51ABAB2D-460E-4A1F-BC59-0F07FBC17747.jpeg',
+            },
+            {
+            title: 'Some title',
+            text: 'Some text',
+            img2: 'https://ecologyofrussia.ru/upload/iblock/1c6/51ABAB2D-460E-4A1F-BC59-0F07FBC17747.jpeg',
+            },
+            {
+            title: 'Some title',
+            text: 'Some text',
+            img2: 'https://ecologyofrussia.ru/upload/iblock/1c6/51ABAB2D-460E-4A1F-BC59-0F07FBC17747.jpeg',
+            },
+            {
+            title: 'Some title',
+            text: 'Some text',
+            img2: 'https://ecologyofrussia.ru/upload/iblock/1c6/51ABAB2D-460E-4A1F-BC59-0F07FBC17747.jpeg',
+            },
+        ]
+
+        function createHeader(title, text, img2) {
+            let header = document.createElement('section');
+            header.classList.add('header');
+            root.appendChild(header);
+        
+            let container = document.createElement('div');
+            header.classList.add('header__container');
+            header.appendChild(container);
+
+            let h1 = document.createElement('h1');
+            h1.classList.add('header__title');
+            h1.innerHTML = title;
+            container.appendChild(h1);
+
+            let p = document.createElement('p');
+            p.classList.add('header__text');
+            p.innerHTML = text;
+            container.appendChild(p);
+
+            let img = document.createElement('img');
+            h1.classList.add('header__img');
+            img.style.width = "200px";
+            img.setAttribute('src', img2);
+            img.setAttribute('alt', 'cat image');
+            container.appendChild(img);
+        }
+        // createHeader('h1', 'text2', 'https://ecologyofrussia.ru/upload/iblock/1c6/51ABAB2D-460E-4A1F-BC59-0F07FBC17747.jpeg');
+
+        function createMultHeader() {
+            for(let i = 0; i < arr.length; i++) {
+                console.log(arr[i].title);
+                createHeader(arr[i].title, arr[i].text, arr[i].img2)
+            }
+        }
+
+    // let out = document.querySelector('.out');
+    // let inp = document.querySelector('.inp');
+
+    // function createBox(text) {
+    //     let div = document.createElement('div');
+
+    //     div.classList.add('box');
+    //     div.innerHTML = text;
+
+    //     let inp1 = document.createElement('input');
+    //     inp1.setAttribute('type', 'checkbox');
+    //     inp1.addEventListener('change', () => {
+    //         console.log('inp1.checked');
+    //         if (inp1.checked) {
+    //             div.classList.add('active');
+    //         } else if (inp1.checked == false) {
+    //             div.classList.remove('active');
+    //         }
+    //     })
+
+    //     div.appendChild(inp1);
+    //     out.appendChild(div);
+    // }      
+    // document.querySelector('.btn').addEventListener('click', () => {
+    //     console.log('test');
+    //     createBox(inp.value);
+    // })
+
+    // for(let i = 0; i < 5; i++) {
+    //     let out = document.querySelector('.out');
+    //     let div = document.createElement('div');
+        // div.innerHTML = 'text';
+        // div.classList.add('box');
+        // div.classList.add(`box-${i}`);
+        // out.appendChild(div);
+    // }
+
+    // let out = document.querySelector('.out');
+    // let catName = 'Tilda';
+
+    // let div = document.createElement('div');
+    // dis.classList.add('box');
+    // div.innerHTML = 'test2';
+
+    // let img = document.createElement('img');
+    // img.setAttribute('src', '');
+    // img.style.width = '300px';
+    // img.setAttribute('alt', `${catName}`)
+
+    // div.appendChild(img);
+    // out.appendChild(div);
+
+    </script>
+</body>
+
+</html>

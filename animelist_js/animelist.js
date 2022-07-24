@@ -225,10 +225,28 @@ const genreList = [
     'All', 'Action', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Shounen', 'Slice of Life', 'Sports', 
 ]
 
-for (let i = 0; i < anime.length; i++) {
-    const element = anime[i]
-    const liItem = document.createElement('li');
-    const content = `
+
+// for (let i = 0; i < anime.length; i++) {
+//     const element = anime[i]
+//     let liItem = document.createElement('li');
+//     const content = `
+//         <h2>${element.name} </h2>
+//         <p>Genre: ${element.genre} </p>
+//         <p>Format: ${element.format} </p>
+//         <p>Episodes: ${element.episodes} </p>
+//         <p>Studious: ${element.studious} </p>
+//         <p>Rating: ${element.rating} </p>
+//         <p>Premiered: ${element.releaseDate} </p>
+//     `
+//     liItem.innerHTML = content;
+//     animeList.appendChild(liItem);
+// }
+
+function renderAnimeList(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        const element = arr[i]
+        let liItem = document.createElement('li');
+        const content = `
         <h2>${element.name} </h2>
         <p>Genre: ${element.genre} </p>
         <p>Format: ${element.format} </p>
@@ -236,17 +254,17 @@ for (let i = 0; i < anime.length; i++) {
         <p>Studious: ${element.studious} </p>
         <p>Rating: ${element.rating} </p>
         <p>Premiered: ${element.releaseDate} </p>
-    `
-    liItem.innerHTML = content;
-    animeList.appendChild(liItem);
-}
-
-let mainTitle = document.createElement('h1');
-mainTitle.innerHTML = 'Anime List';
-wrapper.prepend(mainTitle);
+        `
+        liItem.innerHTML = content;
+        animeList.appendChild(liItem);
+    }
     
-let genreSelect = document.createElement('select');
-animeList.before(genreSelect);
+}
+function renderAnimeList(anime)
+
+
+    
+let genreSelect = document.querySelector('#genre');
 for (let i = 0; i < genreList.length; i++) {
     const genre = genreList[i]
     const genreOption = document.createElement('option');
@@ -254,13 +272,10 @@ for (let i = 0; i < genreList.length; i++) {
     genreSelect.appendChild(genreOption);  
 }
 
-const btn = document.createElement('button');
-btn.innerText = 'Submit'
-genreSelect.after(btn);
+const btn = document.querySelector('.btn');
 btn.onclick = () => {
+    animeList.innerHTML = ''
   console.log(genreSelect.value)
-  let animeListFilter = document.createElement('ul');
-  animeList.replaceWith(animeListFilter);
   if (genreSelect.value === 'All') {
     console.log("testing");
     for (let i = 0; i < anime.length; i++) {
@@ -276,7 +291,7 @@ btn.onclick = () => {
             <p>Premiered: ${elementAll.releaseDate} </p>
         `
         liItemAll.innerHTML = contentAll;
-        animeListFilter.appendChild(liItemAll);
+        animeList.appendChild(liItemAll);
     }
   } else { 
     let genreFilter = anime.filter(obj => obj.genre === genreSelect.value);
@@ -294,12 +309,14 @@ btn.onclick = () => {
             <p>Premiered: ${elementFilter.releaseDate} </p>
         `
         liItemFilter.innerHTML = contentFilter;
-        animeListFilter.appendChild(liItemFilter);
+        animeList.appendChild(liItemFilter);
     }
   }
 }
 
+function filterAmineList() {
 
+}
 
 
 

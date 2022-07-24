@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const arr = [1, 2, 3]
+    const numbers = [1, 2, 3, 4]
+    const numbersArr = [1, 2, 3, 4, 5]
+    
+    // let result = 0
+    // for(let i = 0; i < arr.length; i++) {
+    //     result += arr[i]
+    // }
+    
+    // let sum = 0
+    // for(let i = 0; i < numbers.length; i++) {
+    //     sum += numbers[i]
+    // }
+    
+    // let sumRes = 0
+    // for(let i = 0; i < numbersArr.length; i++) {
+    //     sumRes += numbersArr[i]
+    // }
+
+    function getResult(array) {
+        let result = 0;
+        for(let i = 0; i < array.length; i++) {
+        result += array[i]
+        }
+        return result
+    }
+    console.log(getResult(arr));
+    console.log(getResult(numbers));
+    console.log(getResult(numbersArr));
+    
+    // console.log(result) // 6
+    // console.log(sum) // 10
+    // console.log(sumRes) // 15
+    </script>
+</body>
+
+</html>
